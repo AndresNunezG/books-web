@@ -1,2 +1,4 @@
+./booksweb/booksweb/__pycache__
+./booksweb/bookswebAPI/__pycache__
 .DS_Store
 /venv
