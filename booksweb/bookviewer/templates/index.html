@@ -17,13 +17,12 @@ Book List
             <li>Publication: {{ book.publication_date }}</li>
         </ul>
         <div class="links__container">
-            <div class="forms__container">
-                <a hfref="{% url 'editbook' ibsb=book.isbn %}"><i class="far fa-edit"></i></a>
-                <form>
-                    {% csrf_token %}
+                <a class="link" href="{% url 'editbook' isbn=book.isbn %}">
+                    <i class="edit far fa-edit"></i>
+                </a>
+                <a class="link" href="{% url 'editbook' isbn=book.isbn %}">
                     <i class="delete far fa-trash-alt"></i>
-                </form>
-            </div>
+                </a>
         </div>
     </div>
     {% endfor %}

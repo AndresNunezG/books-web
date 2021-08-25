@@ -67,6 +67,7 @@ main {
 
 .Cards__container {
     width: 100%;
+    height: fit-content;
     padding: 1em 2em;
     display: flex;
     justify-content: center;
@@ -74,8 +75,9 @@ main {
 }
 
 .Card__container {
-    width: 400px;
-    height: max-content;
+    width: 30%;
+    height: fit-content;
+    background-color: red;
     position: relative;
     margin: 1em;
     padding: 0.5em 1em;
@@ -84,10 +86,6 @@ main {
 
 .Card__container ul {
     list-style: none;
-}
-
-.Card__container a {
-    text-decoration: none;
 }
 
 .links__container {
@@ -100,13 +98,9 @@ main {
     cursor: pointer;
 }
 
-.forms__container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.forms__container form {
-    margin-left: 0.5em;
+.links__container a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .Card__container:hover .links__container {

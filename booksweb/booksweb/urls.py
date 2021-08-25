@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from bookviewer.views import index, new_book
 
 urlpatterns = [
-    path('', index, name="index"),
-    path('new/', new_book, name="newbook"),
+    path('', include('bookviewer.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('bookswebAPI.urls')),
 ]
