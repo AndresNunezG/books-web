@@ -14,4 +14,10 @@ def new_book(request):
     return render(request, 'new_book.html')
 
 def edit_book(request, isbn):
-    return render(request, 'edit_book.html')
+    book = list(Book.objects.filter(isbn=isbn).values())[0]
+    date = str(book['publication_date'])
+    print(book)
+    return render(request, 'edit_book.html',{
+        'book': book,
+        'date': date,
+    })

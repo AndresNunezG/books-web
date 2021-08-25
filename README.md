@@ -36,9 +36,18 @@ pip install -r requirements.txt
 
 `/api/create-book/`
 
+- Editar libro - PUT
+
+`update-book/<int:isbn>`
+
+- Borrar libro - DELETE
+
+`delete-book/<int:isbn>`
+
 # Admin
 
 - User: superusuariopy
 - Password: pysuper123
+- Ruta:
 
 `/admin`

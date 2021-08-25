@@ -6,13 +6,14 @@ Edit Book
 
 {% block content %}
 <div class="form__container">
-<form class="form">
+<form class="form" action="{% url 'updatebook' isbn=book.isbn  %}" method="POST">
+    {% csrf_token %} 
     <label for="name">Name</label>
-    <input class="form-field" id="name" name="name"></input>
-    <label for="author_name">Author</label>
-    <input class="form-field" id="author_name" name="author_name"></input>
+    <input class="form-field" id="name" name="name" value="{{ book.name }}"></input>
+    <label for="author_name" >Author</label>
+    <input class="form-field" id="author_name" name="author_name" value="{{ book.author_name }}"></input>
     <label for="category">Category</label>
-    <select class="form-field" name="category" name="category">
+    <select class="form-field" name="category" name="category" value="{{ book.category }}">
         <option value="AA">Action and Adventure</option>
         <option value="CL">Classics</option>
         <option value="CM">Comic Book</option>
@@ -20,9 +21,9 @@ Edit Book
         <option value="FT">Fantasy</option>
     </select>
     <label for="isbn">ISBN</label>
-    <input class="form-field" id="isbn" name="isbn"></input>
+    <input class="form-field" id="isbn" name="isbn" value="{{ book.isbn }}"></input>
     <label for="publication_date">Publication</label>
-    <input type="date" class="form-field" id="publication_date" name="publication_date"></input>
+    <input type="date" class="form-field" id="publication_date" name="publication_date" value="{{ date }}"></input>
     <input class="form-submit" type="submit" value="Save"/>
 </form>
 </div>

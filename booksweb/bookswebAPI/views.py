@@ -1,4 +1,5 @@
 from django.http.response import HttpResponse
+from django.shortcuts import redirect
 from .models import Book
 from django.http import JsonResponse
 from django.forms import model_to_dict
@@ -43,3 +44,21 @@ def create_book(request):
             return HttpResponse("<h1>Book saved</h1>")
     else:
         return HttpResponse("<h1>Invalid method</h1>")
+
+def update_book(request, isbn):
+    if request.method == "POST":
+        book_item = Book.objects.filter(isbn__contains=request.POST['isbn']).values()
+        book_item.name = request.POST['name']
+        book_item.author_name = request.POST['author_name']
+        book_item.category = request.POST['category']
+        book_item.publication_date = request.POST['publication_date']
+        book_item.isbn = request.POST['isbn']
+        book_item.update()
+        return redirect('/')
+
+def delete_book(request, isbn):
+    if request.method == "GET":
+        book_item = Book.objects.filter(isbn__contains=isbn)
+        print(list(book_item.values()))
+        book_item.delete()
+        return redirect('/')

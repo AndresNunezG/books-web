@@ -20,7 +20,7 @@ Book List
                 <a class="link" href="{% url 'editbook' isbn=book.isbn %}">
                     <i class="edit far fa-edit"></i>
                 </a>
-                <a class="link" href="{% url 'editbook' isbn=book.isbn %}">
+                <a class="link" href="{% url 'deletebook' isbn=book.isbn %}">
                     <i class="delete far fa-trash-alt"></i>
                 </a>
         </div>
