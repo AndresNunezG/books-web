@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <Title>Books Web</Title>
+        <script src="https://kit.fontawesome.com/4e60f4dbe8.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400;700&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <!--font-family: 'Besley', serif;-->
+    </head>
+    <body>
+        <header>
+            <div class="Title__container">
+                <h1 class="Title-1">Books&nbsp;</h1>
+                <h1 class="Title-2">Web</h1>
+            </div>
+        </header>
+        <section class="subtitle">
+            {% block subtitle %}
+            {% endblock %}
+        </section>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            <p>Andr&eacute;s N&uacute;ñez | Books Web 2021</p>
+        </footer>
+    </body>
+</html>

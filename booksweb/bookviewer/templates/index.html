@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block subtitle %}
+Book List
+{% endblock %}
+
+{% block content %}
+
+<div class="Cards__container">
+    {% for book in books_list %}
+    <div class="Card__container">
+        <ul>
+            <li>Name: {{ book.name }}</li>
+            <li>Author: {{ book.author_name }}</li>
+            <li>Category: {{ book.category }}</li>
+            <li>ISBN: {{ book.isbn }}</li>
+            <li>Publication: {{ book.publication_date }}</li>
+        </ul>
+        <div class="links__container">
+            <a><i class="edit far fa-edit"></i></a>
+            <a><i class="delete far fa-trash-alt"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
