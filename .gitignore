@@ -1,4 +1,7 @@
 ./booksweb/booksweb/__pycache__
 ./booksweb/bookswebAPI/__pycache__
+./booksweb/bookswebAPI/migrations
+./booksweb/bookviewer/__pycache__
+./booksweb/bookviewer/migrations
 .DS_Store
 /venv
