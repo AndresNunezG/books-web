@@ -1,12 +1,20 @@
 ## BooksWeb
 
-Django Web app with REST
+Django Web app with REST and Server with ExpressJS
 
-## Instalación de dependencias
+## Instalación de dependencias de Python
 
 ```bash
 pip install -r requirements.txt
 ```
+
+## Apps
+
+'/booksweb' Django web app
+
+''
+
+NodeJS version: v16.4.2
 
 # Rutas 
 
@@ -65,3 +73,7 @@ pip install -r requirements.txt
 ## Eliminar ítem
 
 ![delete](./readmeimages/delete.png)
+
+## Consumir API rest con NodeJS y Express
+
+![server](./readmeimages/express_server.png)
