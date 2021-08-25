@@ -51,3 +51,17 @@ pip install -r requirements.txt
 - Ruta:
 
 `/admin`
+
+# Screenshots
+
+## Vista de lista
+
+![view-list](./readmeimages/view.png)
+
+## Edición
+
+![edit](./readmeimages/edit.png)
+
+## Eliminar ítem
+
+![delete](./readmeimages/delete.png)

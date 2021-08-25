@@ -16,6 +16,9 @@ header {
     width: 100%;
     padding: 1em 1em 0 1em;
     background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Title__container {
@@ -34,6 +37,20 @@ header {
 
 .Title-2 {
     font-weight: 400;
+}
+
+.Addbook__container a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.Addbook__container:hover {
+    color: #FFF;
+    text-decoration: underline #FFF;
+}
+
+.Addbook__container:hover i {
+    color: #FFF;
 }
 
 .subtitle {
@@ -67,6 +84,7 @@ main {
 
 .Cards__container {
     width: 100%;
+    min-height: 82vh;
     height: fit-content;
     padding: 1em 2em;
     display: flex;

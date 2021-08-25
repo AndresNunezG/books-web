@@ -25,7 +25,7 @@ def book(request, pk):
     else:
         return HttpResponse("<h1>Invalid method</h1>")
 
-def create_book(request):
+def create_book(request, web="False"):
     if request.method ==  "POST":
         isbn = request.POST['isbn']
         if isbn not in Book.objects.filter(name__contains=isbn):
@@ -41,24 +41,33 @@ def create_book(request):
                 publication_date = publication_date,
             )
             book_item.save()
-            return HttpResponse("<h1>Book saved</h1>")
+            if web == "False":
+                return JsonResponse({'200': 'Object created'})
+            else:
+                return redirect('/')
     else:
         return HttpResponse("<h1>Invalid method</h1>")
 
-def update_book(request, isbn):
+def update_book(request, isbn, web="False"):
     if request.method == "POST":
-        book_item = Book.objects.filter(isbn__contains=request.POST['isbn']).values()
+        book_item = Book.objects.filter(isbn=isbn).values()
         book_item.name = request.POST['name']
         book_item.author_name = request.POST['author_name']
         book_item.category = request.POST['category']
         book_item.publication_date = request.POST['publication_date']
         book_item.isbn = request.POST['isbn']
         book_item.update()
-        return redirect('/')
+        if web == "False":
+            return JsonResponse({'200': 'Object updated'})
+        else:
+            return redirect('/')
 
-def delete_book(request, isbn):
+def delete_book(request, isbn, web="False"):
     if request.method == "GET":
-        book_item = Book.objects.filter(isbn__contains=isbn)
+        book_item = Book.objects.filter(isbn=isbn)
         print(list(book_item.values()))
         book_item.delete()
-        return redirect('/')
+        if web == "False":
+            return JsonResponse({'200': 'Object deleted'})
+        else:
+            return redirect('/')
