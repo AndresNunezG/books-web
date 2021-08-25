@@ -19,7 +19,7 @@ from bookviewer.views import index, new_book
 
 urlpatterns = [
     path('', index, name="index"),
-    path('new/', new_book, name="new book"),
+    path('new/', new_book, name="newbook"),
     path('admin/', admin.site.urls),
     path('api/', include('bookswebAPI.urls')),
 ]

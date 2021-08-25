@@ -1,5 +1,4 @@
 from django.http.response import HttpResponse
-from django.views import View
 from .models import Book
 from django.http import JsonResponse
 from django.forms import model_to_dict
@@ -42,11 +41,5 @@ def create_book(request):
             )
             book_item.save()
             return HttpResponse("<h1>Book saved</h1>")
-    else:
-        return HttpResponse("<h1>Invalid method</h1>")
-    
-def edit_book(request):
-    if request.method == "POST":
-        return HttpResponse("<h1>Book Updated</h1>")
     else:
         return HttpResponse("<h1>Invalid method</h1>")
