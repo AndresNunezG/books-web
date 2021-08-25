@@ -17,8 +17,14 @@ Book List
             <li>Publication: {{ book.publication_date }}</li>
         </ul>
         <div class="links__container">
-            <a><i class="edit far fa-edit"></i></a>
-            <a><i class="delete far fa-trash-alt"></i></a>
+            <div class="forms__container">
+                <form>
+                    <i class="edit far fa-edit"></i>
+                </form>
+                <form>
+                    <i class="delete far fa-trash-alt"></i>
+                </form>
+            </div>
         </div>
     </div>
     {% endfor %}

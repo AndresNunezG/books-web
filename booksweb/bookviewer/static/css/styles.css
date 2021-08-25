@@ -10,16 +10,7 @@
     --fg-warning-color: #F0AD4E;
 }
 
-body {
-    font-family: 'Besley', serif;
-    min-height: 100vh;
-}
-
-.subtitle {
-    width: 100%;
-    padding: 0.5em 1em;
-    background-color: var(--main-bg-color);
-}
+/*Layout*/
 
 header {
     width: 100%;
@@ -32,12 +23,36 @@ header {
     border-bottom: solid 1px #FFF;
 }
 
+.Title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
 .Title-1 {
     font-weight: 700;
 }
 
 .Title-2 {
     font-weight: 400;
+}
+
+.subtitle {
+    width: 100%;
+    padding: 0.5em 1em;
+    background-color: var(--main-bg-color);
+}
+
+body {
+    font-family: 'Besley', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    position: inherit;
+    width: 100%;
+    padding: 0.5em;
+    background: var(--main-bg-color);
 }
 
 main {
@@ -47,6 +62,8 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+/*Book List*/
 
 .Cards__container {
     width: 100%;
@@ -58,9 +75,10 @@ main {
 
 .Card__container {
     width: 400px;
+    height: max-content;
+    position: relative;
     margin: 1em;
     padding: 0.5em 1em;
-    position: relative;
     background-color: #DDD;
 }
 
@@ -75,11 +93,20 @@ main {
 .links__container {
     bottom: 0;
     right: 0;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     display: none;
     opacity: 0;
     position: absolute;
     cursor: pointer;
+}
+
+.forms__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forms__container form {
+    margin-left: 0.5em;
 }
 
 .Card__container:hover .links__container {
@@ -99,10 +126,29 @@ main {
     color: var(--fg-danger-color);
 }
 
-footer {
-    position: absolute;
+/*New Book*/
+
+.form__container {
+    padding: 1em;
+    width: 400px;
+    height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form {
     width: 100%;
-    bottom: 0;
-    padding: 0.5em;
-    background: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    margin-bottom: 1em;
+    padding: 5px;
+}
+
+.form-submit {
+    width: 50%;
+    height:2em;
 }

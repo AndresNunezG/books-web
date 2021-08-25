@@ -8,3 +8,6 @@ def index(request):
     return render(request, 'index.html',{
         'books_list': books_list,
     })
+
+def new_book(request):
+    return render(request, 'new_book.html')

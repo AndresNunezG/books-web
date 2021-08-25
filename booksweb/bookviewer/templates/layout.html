@@ -8,14 +8,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400;700&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         <!--font-family: 'Besley', serif;-->
     </head>
     <body>
         <header>
             <div class="Title__container">
-                <h1 class="Title-1">Books&nbsp;</h1>
-                <h1 class="Title-2">Web</h1>
+                <h1 class="Title-1"><a class="Title-link" href="/">Books&nbsp;</a></h1>
+                <h1 class="Title-2"><a class="Title-link" href="/">Web</a></h1>
             </div>
         </header>
         <section class="subtitle">
@@ -26,7 +26,7 @@
             {% block content %}
             {% endblock %}
         </main>
-        <footer>
+        <footer class="footer">
             <p>Andr&eacute;s N&uacute;ñez | Books Web 2021</p>
         </footer>
     </body>
